@@ -1,7 +1,7 @@
-/* The for principles of "this";
+/* The four principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. 
+* 1. It refers to whatever object is to the left of the dot in JSON dot notation.
 * 2. 
 * 3. 
 * 4. 
@@ -10,7 +10,7 @@
 */
 
 // Principle 1
-
+       
 // code example for Window Binding
 
 // Principle 2
