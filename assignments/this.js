@@ -1,10 +1,10 @@
 /* The four principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. It refers to whatever object is to the left of the dot in JSON dot notation.
-* 2. 
-* 3. 
-* 4. 
+* 1. In the global scope the "this" points to the whole window/console since there is no object or function to the left of the dot for it to point to.  That's window/global object binding.
+* 2. When the "this" receives an object as a parameter; or it is in function scope and also set as a key value; it points to the object that contains all of the key:value pairs.  That's implicit binding. 
+* 3. when the "this" is inside a constructor function that is designed to create a new object; the "this" points to the new object during each instance that it is called.  This is new binding.
+* 4. when .call or .apply is used inside a constructor function it overrides settings and the "this" points to whatever you're pulling in.  This is explicit binding.
 *
 * write out a code example of each explanation above
 */
