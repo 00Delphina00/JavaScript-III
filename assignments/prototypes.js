@@ -20,10 +20,17 @@
         this.name = attributes.name;
         this.dimensions = {"length":attributes.length, "width":attributes.width,"height":attributes.height};
         this.destroy = function(name){
-             return `${this.name} was removed from the game.`
-        }
+             return `${this.name} was removed from the game.`;
+        };
 }
-
+const mycharacter = new GameObject ({
+     "name": "Nami",
+     "length":4,
+     "width":1,
+     "height":2,
+});
+console.log (mycharacter);
+console.log(mycharacter.destroy());
 /*
   === CharacterStats ===
   * healthPoints
