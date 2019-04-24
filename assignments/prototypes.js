@@ -15,9 +15,13 @@
   * dimensions (These represent the character's size in the video game)
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
-function GameObject (date, name, height, width, weight){
-  
+ const GameObject = {
+        this.createdAt = date;
+        this.name = name;
+        this.dimensions = "Height " + height + " Width " + width + " Weight " + weight;
+        this.destroy = function(name){}
 }
+
 /*
   === CharacterStats ===
   * healthPoints
