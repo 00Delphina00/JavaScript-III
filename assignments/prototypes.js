@@ -23,20 +23,28 @@
              return `${this.name} was removed from the game.`;
         };
 }
-const mycharacter = new GameObject ({
+const Nami = new GameObject({
      "name": "Nami",
      "length":4,
      "width":1,
      "height":2,
 });
-console.log (mycharacter);
-console.log(mycharacter.destroy());
+console.log(Nami);
+console.log(Nami.destroy());
 /*
   === CharacterStats ===
   * healthPoints
   * takeDamage() // prototype method -> returns the string '<object name> took damage.'
   * should inherit destroy() from GameObject's prototype
 */
+CharacterStats.prototype = Object.create(GameObject.prototype);
+function CharacterStats(attributes){
+   this.call(GameObject);
+   this.healthPoints = attributes.healthPoints;
+   this.takeDamage = function(name){
+     return `${this.name} took damage.`;
+   };
+}
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
