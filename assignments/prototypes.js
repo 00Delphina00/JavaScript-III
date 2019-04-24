@@ -16,7 +16,7 @@
   * destroy() // prototype method that returns: `${this.name} was removed from the game.`
 */
  function GameObject (attributes) {
-        
+        this.createdAt = attributes.createdAt;
         this.name = attributes.name;
         this.dimensions = {"length":attributes.length, "width":attributes.width,"height":attributes.height};
         this.destroy = function(name){
@@ -62,12 +62,6 @@ function Humanoid (attributes){
 }
 Humanoid.prototype = Object.create(CharacterStats.prototype);
 
-const Nami = new Humanoid({name: "Nami", language: "Ancient Sumerian"});
- 
- console.log(Nami.destroy());
- console.log(Nami.takeDamage());
- console.log(Nami.greet());
-
 
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
@@ -77,7 +71,7 @@ const Nami = new Humanoid({name: "Nami", language: "Ancient Sumerian"});
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
-/*
+
   const mage = new Humanoid({
     createdAt: new Date(),
     dimensions: {
@@ -138,9 +132,15 @@ const Nami = new Humanoid({name: "Nami", language: "Ancient Sumerian"});
   console.log(archer.greet()); // Lilith offers a greeting in Elvish.
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
-*/
+
 
   // Stretch task: 
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
+
+  const Nami = new Humanoid({name: "Nami", language: "Ancient Sumerian"});
+ 
+ console.log(Nami.destroy());
+ console.log(Nami.takeDamage());
+ console.log(Nami.greet());
