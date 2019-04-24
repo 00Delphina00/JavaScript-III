@@ -21,6 +21,16 @@ happyBirthday(40);
 
 // Principle 2
 
+const healthStatus = {
+     prompt: `The runner's health status is `,
+     updateStatus: function(healthProblem){
+         console.log(`${this.prompt} ${healthProblem}`);
+     }
+}
+healthStatus.updateStatus("bee sting allergy");
+healthStatus.updateStatus("asthma");
+healthStatus.updateStatus("epilepsy");
+healthStatus.updateStatus("diabetes");
 // code example for Implicit Binding
 
 // Principle 3
