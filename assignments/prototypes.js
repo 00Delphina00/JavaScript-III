@@ -142,7 +142,6 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
   function Hero (heroAttributes, callback){
     Humanoid.call(this, heroAttributes);
     this.naturalDisaster = function (heroAttributes, callback){
-      let  damageVillain = -50;
       callback(-50);
       console.log(`The Chief Nature Spirits of Planet Earth no longer obey humans or nonhumans. They just dealt 50 Points of damage to ALL races.`);   
     }
