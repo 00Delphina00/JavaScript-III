@@ -42,13 +42,6 @@
  
 CharacterStats.prototype = Object.create(GameObject.prototype);
 
-const Nami = new CharacterStats({name: "Nami"});
- 
-// console.log(Nami);
-// console.log(Nami.destroy());
- console.log(Nami.destroy());
- console.log(Nami.takeDamage());
-
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
   * team
@@ -58,7 +51,24 @@ const Nami = new CharacterStats({name: "Nami"});
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
+function Humanoid (attributes){
+  CharacterStats.call(this, attributes);
+  this.team = attributes.team;
+  this.weapons = attributes.weapons;
+  this.language = attributes.language;
+  this.greet = function(attributes){
+    return `${this.name} offers a greeting in ${this.language}`;
+  };
+}
+Humanoid.prototype = Object.create(CharacterStats.prototype);
+
+const Nami = new Humanoid({name: "Nami", language: "Ancient Sumerian"});
  
+ console.log(Nami.destroy());
+ console.log(Nami.takeDamage());
+ console.log(Nami.greet());
+
+
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
   * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
