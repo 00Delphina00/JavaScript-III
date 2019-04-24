@@ -139,15 +139,37 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
 
-  function Hero (heroAttributes, callback){
+  function Hero (heroAttributes, villainDamage){
     Humanoid.call(this, heroAttributes);
     this.naturalDisaster = function (heroAttributes, callback){
       callback(-50);
       console.log(`The Chief Nature Spirits of Planet Earth no longer obey humans or nonhumans. They just dealt 50 Points of damage to ALL races.`);   
-    }
-    
+    };
+    //this.EpidemicsOfDisease
+    //this.2WeeksNonstopRainAmericaAndAfricaCities
+    //this.ZikaVirusStealFertility
+    //this.MagnetosphereOpensBurns
+    //this.CaliforniaHurricaneTriggersMegaQuakeAndTsunami
+    //this.AmericanDollarEqualsPeso
+    if (villainDamage !== null){
+       this.healthPoints = this.healthpoints + villainDamage; 
+       console.log(`Hero received ${villainDamage} points of damage.`);
+    } else {console.log(`No damage received this round.`)};
   }
  
+ function villain (villainAttributes, heroDamage){
+   Humanoid.call(this, villainAttributes);
+   this.psychologicalWarfare = function(villainAttributes,  callback){
+     //console.log  you are trained to hate your own people. Your anceint history is rewritten while villain 
+     //commits
+     //cultural misappropriation stealing your people's identity.  Villain renames your gods & changes religious texts.
+    //Villain cheats and receives technology from greys and rigellians to appear superior.
+     //villain mass murders and mass incarcerates your tribe which is much smaller than the villain's tribe.
+     //villain kidnaps your children and leaves you isolated or in jail for homelessness in old age.
+     //console.log 100 points damage.
+     //this.subconsciousBias  50 points damage
+   }
+ }
 //  console.log(Nami.destroy());
 //  console.log(Nami.takeDamage());
 //  console.log(Nami.greet());
