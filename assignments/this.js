@@ -42,12 +42,29 @@ function emergencyResponse (agencyName, teamSize){
     };
 }
 const goTeam = new emergencyResponse;
+const medTeam = new emergencyResponse;
 
 goTeam.speakToTeam("5k Fun Run", "5");
-goTeam.speakToTeam("College Tournament", 2);
+medTeam.speakToTeam("College Tournament", 2);
 
 // code example for New Binding
 
-// Principle 4
+// Principle
+function expandTeam (agencyName, teamSize, newTeamMembers){
+     emergencyResponse.call(this, agencyName, teamSize);
+      this.newSize = function (agencyName, teamSize, newTeamMembers){
+               newTeamSize = teamSize + newTeamMembers;
+               console.log(`You added ${newTeamMembers} new response team members.  Your ${agencyName} Response Team Size is now ${newTeamSize} people.`);
+     }
+}
+const apply = new expandTeam;
+ 
+apply.speakToTeam("Olympics", 100);
+apply.newSize("Olympics", 100, 50);
+
+const FEMA = new expandTeam;
+
+FEMA.speakToTeam("FEMA", 500);
+FEMA.newSize("FEMA", 500, 50);
 
 // code example for Explicit Binding
