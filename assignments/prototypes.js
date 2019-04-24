@@ -19,7 +19,9 @@
         
         this.name = attributes.name;
         this.dimensions = {"length":attributes.length, "width":attributes.width,"height":attributes.height};
-        this.destroy = function(name){}
+        this.destroy = function(name){
+             return `${this.name} was removed from the game.`
+        }
 }
 
 /*
