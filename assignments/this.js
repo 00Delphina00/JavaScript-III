@@ -10,6 +10,12 @@
 */
 
 // Principle 1
+
+function happyBirthday(age){
+    console.log(`Happy Birthday! You are ${this} years old!`);
+    return age;  //when there is no concatenation it outputs a huge amount of console related stuff instead of just saying [object global].
+}
+happyBirthday(40);
        
 // code example for Window Binding
 
