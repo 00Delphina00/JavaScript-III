@@ -139,8 +139,16 @@ Humanoid.prototype = Object.create(CharacterStats.prototype);
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
 
-  const Nami = new Humanoid({name: "Nami", language: "Ancient Sumerian"});
+  function Hero (heroAttributes, callback){
+    Humanoid.call(this, heroAttributes);
+    this.naturalDisaster = function (heroAttributes, callback){
+      let  damageVillain = -50;
+      callback(-50);
+      console.log(`The Chief Nature Spirits of Planet Earth no longer obey humans or nonhumans. They just dealt 50 Points of damage to ALL races.`);   
+    }
+    
+  }
  
- console.log(Nami.destroy());
- console.log(Nami.takeDamage());
- console.log(Nami.greet());
+//  console.log(Nami.destroy());
+//  console.log(Nami.takeDamage());
+//  console.log(Nami.greet());
