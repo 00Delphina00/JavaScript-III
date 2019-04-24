@@ -18,7 +18,7 @@
  function GameObject (attributes) {
         this.createdAt = attributes.createdAt;
         this.name = attributes.name;
-        this.dimensions = {"length":attributes.length, "width":attributes.width,"height":attributes.height};
+        this.dimensions = attributes.dimensions;
         this.destroy = function(name){
              return `${this.name} was removed from the game.`;
         };
