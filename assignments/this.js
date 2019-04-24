@@ -34,6 +34,17 @@ healthStatus.updateStatus("diabetes");
 // code example for Implicit Binding
 
 // Principle 3
+function emergencyResponse (agencyName, teamSize){
+
+    this.instruct = "Give first aid and call an ambulance.";
+    this.speakToTeam = function(agencyName, teamSize){
+        console.log(`${agencyName} has ${teamSize} emts. All emts must ${this.instruct}`);
+    };
+}
+const goTeam = new emergencyResponse;
+
+goTeam.speakToTeam("5k Fun Run", "5");
+goTeam.speakToTeam("College Tournament", 2);
 
 // code example for New Binding
 
